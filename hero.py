@@ -9,9 +9,9 @@ class Hero:
     def fight(self, opponent): 
         number = random.randint(0,1)
         if number == 0: 
-            print('Wonder Woman Wins')
+            print(f"{opponent.name} wins")
         elif number == 1: 
-            print('Dumbledore Wins')
+            print(f"{self.name} wins")
 
 
 if __name__ == "__main__": 
