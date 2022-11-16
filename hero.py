@@ -1,5 +1,6 @@
 from ability import Ability
 from armor import Armor 
+from weapon import Weapon 
 
 import random
 
@@ -57,6 +58,7 @@ class Hero:
         else: 
             return True 
 
+
     def fight(self, opponent): 
         while self.is_alive() == True and opponent.is_alive() == True: 
             self.take_damage(opponent.attack())
@@ -68,6 +70,10 @@ class Hero:
 
         if opponent.is_alive == False: 
             print(f'{self.name} won!')
+
+    # adding weapon 
+    def add_weapon(self, weapon): 
+        self.abilities.append(weapon)
             
 
        
@@ -78,20 +84,26 @@ class Hero:
 if __name__ == "__main__": 
 # instating 
 
-    hero1= Hero("Wonder Woman")
-    hero2 = Hero('Dumbledore')
+    # hero1= Hero("Wonder Woman")
+    # hero2 = Hero('Dumbledore')
 
-    ability1 = Ability("Super Speed", 300)
-    ability2 = Ability('Super Eyes', 130)
-    ability3 = Ability('Wizard Wand', 80)
-    ability4 = Ability("Wizard Beard", 20)
+    # ability1 = Ability("Super Speed", 300)
+    # ability2 = Ability('Super Eyes', 130)
+    # ability3 = Ability('Wizard Wand', 80)
+    # ability4 = Ability("Wizard Beard", 20)
 
-    hero1.add_ability(ability1)
-    hero1.add_ability(ability2)
-    hero2.add_ability(ability3)
-    hero2.add_ability(ability4)
+    # hero1.add_ability(ability1)
+    # hero1.add_ability(ability2)
+    # hero2.add_ability(ability3)
+    # hero2.add_ability(ability4)
 
-    hero1.fight(hero2)
+    # hero1.fight(hero2)
+
+    # testing weapon
+    hero = Hero("Wonder Woman")
+    weapon = Weapon("Lasso of Truth", 90)
+    hero.add_weapon(weapon)
+    print(hero.attack())
 
 
 
