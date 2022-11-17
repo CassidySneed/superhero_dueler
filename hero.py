@@ -13,12 +13,12 @@ class Hero:
         self.current_health = starting_health
         
     # fight
-    # def fight(self, opponent): 
-    #     number = random.randint(0,1)
-    #     if number == 0: 
-    #         print(f"{opponent.name} wins")
-    #     elif number == 1: 
-    #         print(f"{self.name} wins")
+    def fight(self, opponent): 
+        number = random.randint(0,1)
+        if number == 0: 
+            print(f"{opponent.name} wins")
+        elif number == 1: 
+            print(f"{self.name} wins")
 
     # abilities 
     def add_ability(self, ability): 
@@ -65,10 +65,11 @@ class Hero:
             opponent.take_damage(self.attack())
             print(f'{self.name} has {self.current_health}% health and {opponent.name} has {opponent.current_health}% health')
 
+       
         if self.is_alive() == False: 
             print(f'{opponent.name } won!')
 
-        if opponent.is_alive == False: 
+        if opponent.is_alive() == False: 
             print(f'{self.name} won!')
 
     # adding weapon 
@@ -84,26 +85,26 @@ class Hero:
 if __name__ == "__main__": 
 # instating 
 
-    # hero1= Hero("Wonder Woman")
-    # hero2 = Hero('Dumbledore')
+    hero1= Hero("Wonder Woman")
+    hero2 = Hero('Dumbledore')
 
-    # ability1 = Ability("Super Speed", 300)
-    # ability2 = Ability('Super Eyes', 130)
-    # ability3 = Ability('Wizard Wand', 80)
-    # ability4 = Ability("Wizard Beard", 20)
+    ability1 = Ability("Super Speed", 300)
+    ability2 = Ability('Super Eyes', 130)
+    ability3 = Ability('Wizard Wand', 80)
+    ability4 = Ability("Wizard Beard", 20)
 
-    # hero1.add_ability(ability1)
-    # hero1.add_ability(ability2)
-    # hero2.add_ability(ability3)
-    # hero2.add_ability(ability4)
+    hero1.add_ability(ability1)
+    hero1.add_ability(ability2)
+    hero2.add_ability(ability3)
+    hero2.add_ability(ability4)
 
-    # hero1.fight(hero2)
+    hero1.fight(hero2)
 
     # testing weapon
-    hero = Hero("Wonder Woman")
-    weapon = Weapon("Lasso of Truth", 90)
-    hero.add_weapon(weapon)
-    print(hero.attack())
+    # hero = Hero("Wonder Woman")
+    # weapon = Weapon("Lasso of Truth", 90)
+    # hero.add_weapon(weapon)
+    # print(hero.attack())
 
 
 
@@ -160,15 +161,3 @@ if __name__ == "__main__":
 
     # print(my_hero.armors)
     # print(my_hero.defend())
-    
-
-    
-
-
-
-
-
-
-
-
-
