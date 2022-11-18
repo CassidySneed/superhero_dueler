@@ -31,9 +31,17 @@ class Team:
 # team class stats 
     def stats(self): 
         '''Print team statistics'''
+        average = 0
         for hero in self.heroes:
-            kd = hero.kills/hero.deaths
-            print(f'{hero.name} Kill/Deaths: {kd}')
+            if hero.deaths == 0:
+                hero.deaths = 1 
+                kd = hero.kills/hero.deaths
+            else:
+                 kd = hero.kills/hero.deaths
+
+            print_stat = print(f'{hero.name} Kill/Deaths: {kd}')
+            average += kd
+        return str(average)
 
 # reviving heroes 
     def revive_heroes(self, health=100):
@@ -68,16 +76,16 @@ class Team:
             
             
      
+if __name__ == "__main__":
+
+    team1 = Team('team1')
+
+    team1.add_hero(Hero("Wonder Woman"))
+    # team1.add_hero('batman')
 
 
-team1 = Team('team1')
-
-team1.add_hero(Hero("Wonder Woman"))
-# team1.add_hero('batman')
-
-
-team1.view_all_heroes()
-print(team1.heroes[0].kills)
+    team1.view_all_heroes()
+    print(team1.heroes[0].kills)
 
 
 

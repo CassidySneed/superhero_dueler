@@ -12,7 +12,7 @@ class Weapon(Ability):
 
 
     
-
-sword = Weapon('sword', 2000)
-print(sword)
-print(sword.name)
+if __name__ == "__main__":
+    sword = Weapon('sword', 2000)
+    print(sword)
+    print(sword.name)

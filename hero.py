@@ -80,22 +80,15 @@ class Hero:
 
        
         if self.is_alive() == False: 
-            self.add_death()
-            opponent.add_kill()
+            self.add_death(1)
+            opponent.add_kill(1)
             print(f'{opponent.name } won!')
 
         if opponent.is_alive() == False: 
-            self.add_kill()
-            opponent.add_death()
+            self.add_kill(1)
+            opponent.add_death(1)
 
             print(f'{self.name} won!')
-
-    
-            
-
-       
-
-
 
 
 if __name__ == "__main__": 
